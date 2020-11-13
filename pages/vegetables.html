@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegetables</title>
+  <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../images/websiteLogo.jpg" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">CART</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="cartBody">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" id="orderBtn" onclick="placeOrder()">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal register-->
+
+<div class="modal fade" id="uroosaModal" tabindex="-1" aria-labelledby="uroosaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Login</a>
+              </li>
+          </ul>
+          
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="center">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="FirstName">FirstName</label>
+                          <input type="text" class="form-control" id="signUpFirstName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="LastNAme">Last Name</label>
+                          <input type="text" class="form-control" id="signUpLastName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="signUpEmail"> Email</label>
+                          <input type="email" class="form-control" id="signUpEmail" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="password"> Password</label>
+                          <input type="password" class="form-control" id="password" required>
+                        </div>
+
+ 
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="signUpAddress" placeholder="1234 Main St" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="Mobile">Mobile</label>
+                          <input type="text" class="form-control" id="signUpMobile" placeholder="Apartment, studio, or floor" required>
+                        </div>
+
+      
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="signUpCity" required>
+                        </div>
+                        <!-- <div class="form-group col-md-6">
+                          <label for="PostalCode">Postal Code</label>
+                          <input type="text" class="form-control" id="SignUpPostalCode">
+                        </div>
+                        <div class="form-group col-md-8">
+                          <label for="personalInformation">Personal Information </label>
+                          <input type="text" class="form-control" id="personalInformation">
+                        </div> -->
+                      </div>
+                      <div class="form-group">
+                        <p id="signUpErrorMessage"></p>
+                        <p id="SignUpSuccessMessage"></p>
+                      </div>
+                      <button onclick="signUp()" type="submit" class="btn btn-primary signUpBtn">Sign Up</button> 
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  
+                    <label for="EmailAddress">Email address</label>
+                    <input type="email" class="form-control" required id="SignInEmail" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label for="Password">Password</label>
+                    <input type="password" required class="form-control" id="SignInPassword">
+                    <div class="form-group">
+                   <p id="errorMessage"></p>
+                   <p id="successMessage"></p>
+                   </div>
+                   <button onclick="signIn()" type="submit" class="btn btn-primary SignInBtn">Sign In</button>   
+             </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container-fluid firstNav">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"> 
+          <img src="../images/websiteLogo.jpg" alt="weblogo" class="weblogo"> </a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/contact.html">Contact Us </a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#"  data-toggle="modal" data-target="#uroosaModal" id="registerLogin" >Register/Login</a>
+            </li>
+            <li class="nav-item float-right " id="userCheckOut">
+              <a class="nav-link" href="#" onclick="alert('Please Login First')"><i class="fa fa-shopping-cart fa-2x checkOut "  aria-hidden="true"></i></a>
+             </li>
+             <li class="nav-item float-right " id="subPages" >
+              <a class="nav-link" href="#" onclick="alert('Please Login First')"><i class="fa fa-upload upload" aria-hidden="true"></i></a>
+             </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+      </div>
+    </div>  
+
+  <div class="container-fluid socialicons bg-white sticky-top">
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-light rounded ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" 
+            aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown menu-area">
+                  <a class="nav-link dropdown-toggle frontDisplay" href="#" id="mega-one"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Grocery
+                  </a>
+                  <div class="dropdown-menu mega-area" aria-labelledby="mega-one">
+                   <div class="row">
+                     <div class="col-sm-6 col-lg-3">
+                       <h5>Meat Shop</h5>
+                       <a href="../pages/chicken.html" class="dropdown-item">Chicken</a>
+                       <a href="../beef.html" class="dropdown-item">Beef</a>
+                       <a href="#" class="dropdown-item">Fish</a>
+                       <a href="#" class="dropdown-item">Mutton</a>
+                     </div>
+                     <div class="col-sm-6 col-lg-3">
+                      <h5>Fresh fruits</h5>
+                      <a href="../pages/Fruits.html" class="dropdown-item">Fresh fruits</a>
+                      <a href="../pages/vegetables.html" class="dropdown-item">Fresh vegeteables</a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                      <h5>Diary Products</h5>
+                      <a href="#" class="dropdown-item">Cheese & Butter</a>
+                      <a href="#" class="dropdown-item">Milk & Cream</a>
+                      <a href="#" class="dropdown-item">Yougurt</a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3"> 
+                      <h5>Rice & Flour</h5>
+                      <a href="#" class="dropdown-item">Basmati Rice</a>
+                      <a href="#" class="dropdown-item">Economy Rice</a>
+                      <a href="#" class="dropdown-item">Flour</a>
+                      <a href="#" class="dropdown-item">Sela Rice</a>
+                    </div>
+                   </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown menu-area">
+                  <a class="nav-link dropdown-toggle frontDisplay" href="#" id="mega-two"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Non-Grocery
+                  </a>
+                  <div class="dropdown-menu mega-area" aria-labelledby="mega-two">
+                   <div class="row">
+                     <div class="col-sm-6 col-lg-3">
+                       <h5>Stationary</h5>
+                       <a href="../pages/paint.html" class="dropdown-item">Paints</a>
+                       <a href="../pages/pencil.html" class="dropdown-item">Pencils</a>
+                     </div>
+                     <div class="col-sm-6 col-lg-3">
+                      <h5>Baby Care</h5>
+                      <a href="../pages/lotion.html" class="dropdown-item">Lotion</a>
+                      <a href="../pages/.pampers" class="dropdown-item">Pampers</a>
+                      <a href="../pages/shampoo.html" class="dropdown-item">Shampoo</a>
+                     </div>  
+                    <div class="col-sm-6 col-lg-3">
+                      <h5>Home & Living</h5>
+                      <a href="../pages/KitchenAppliances.html" class="dropdown-item">Kitchen Appliances</a>
+                      <a href="../pages/battery.html" class="dropdown-item">Batteries</a>
+                      <a href="#" class="dropdown-item">LED TV</a>
+                      <a href="#" class="dropdown-item">Microwave Oven</a>
+                      
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                      <h5>Games & Sports</h5>
+                      <a href="#" class="dropdown-item">Cricket</a>
+                      <a href="#" class="dropdown-item">Doll House</a>
+                      <a href="#" class="dropdown-item">Football</a>
+                      <a href="#" class="dropdown-item">Tennis</a>                  
+                    </div>
+                   </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <span class="navbar-text iconsocial">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link " href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> <i class="fa fa-youtube " aria-hidden="true"></i> </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                  </li>
+                </ul>
+              </span>
+            </div>
+          </nav>
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+<div class="container">
+<img class="sliderVegi" src="../images/vegetable-slider-2.jpg" alt="">
+</div>
+
+
+  <div class="container cardBody"> 
+    <div class="row" id="display">
+     
+    </div>
+  </div> 
+
+  <div class="container-fluid mt-5 mainfoot">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 foot ">
+          <h6 class="hdFooter"> Helpful Links</h6>
+          <ul class="footer-ul">
+            <li> <a href="#" class="footer-links"> Privacy Policy</a> </li>
+            <li> <a href="" class="footer-links"> Terms & Condition</a> </li>
+            <li> <a href="" class="footer-links"> Contact Us</a> </li>
+            <li> <a href="" class="footer-links"> FAQS </a> </li>
+            <li> <a href="" class="footer-links"> Order Tracking</a> </li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 foot  ">
+          <h6 class="hdFooter">Contact Us </h6>
+          <ul class="footer-ul">
+            <li> <a href=""> <i class="fa fa-phone" aria-hidden="true"></i> </a> <span class="contacts"> 03182038679
+              </span>
+            </li>
+            <li> <a href=""> <i class="fa fa-envelope" aria-hidden="true"> </i></a> <span class="contacts">
+                uroosa465@gmail.com </span></li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 foot">
+          <h6 class="hdFooter"> Mission Statement </h6>
+          <p class="footer-para"> Mission Statement - To offer an online, easy to use, cost effective, quality
+            guaranteed, service orientated stationery purchasing method for school goers, personal and small business.
+            Locally based service and community responsibility, coupled with purchasing convenience are the cornerstones
+            of our business model.</p>
+        </div>
+
+      </div>
+      <hr class="line">
+      <i class="fa fa-copyright" aria-hidden="true"> Copyright 2019-2020</i>
+    </div>
+  </div>
+
+  <div id="message" class="bg-success text-white text-center px-3 py-2">
+    Added to cart successfully
+  </div>
+
+<!-- bootstrap javascripts links -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- DropDown Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+          $(this).next('ul').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+      </script>
+
+    <script>
+      $('#cart').click(function () {
+        $('#cartModal').modal('toggle')
+        reload()
+    })
+    </script>
+
+    <!-- Firbase Database Links -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAS2ZQ06UevudqpcQ6ABtIBbY3NLVlBz4M",
+      authDomain: "test-phase-a132c.firebaseapp.com",
+      databaseURL: "https://test-phase-a132c.firebaseio.com",
+      projectId: "test-phase-a132c",
+      storageBucket: "test-phase-a132c.appspot.com",
+      messagingSenderId: "294087323166",
+      appId: "1:294087323166:web:3623ce4dd32ed339f4880f",
+      measurementId: "G-QNYK8NLSN6"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/vegi.js"></script>
+  <script src="../js/addToCart.js"></script>
+  <script src="../js/reload.js"></script>
+  <script src="../js/subPages.js"></script>
+  <script src="../js/signOut.js"></script>
+</body>
+
+</html>

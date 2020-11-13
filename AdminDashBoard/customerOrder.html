@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/bootstrap-4.4.1-dist/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Customer Order</title>
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row ">
+          <div class="col-md-3 adminsideCol ">
+
+           <ul>
+            <li><i class="fa fa-user-circle-o dashboardPic" aria-hidden="true"></i></li>
+             <li> <a href="customerDetail.html">Customer Detail</a> </li>
+             <li> <a href="customerOrder.html">Customer Orders</a> </li>
+             <li> <a href="">Manage Orders</a> </li>
+           </ul>
+          </div>
+    
+          <div class="col-md-9 mt-5">
+            <div class="table-responsive" >
+                <table class="table table-striped table-sm customerTable" id="CustomerOder" border="1" >
+                   
+                         
+                </table>
+              </div> 
+             
+          </div>
+         
+        </div>
+      </div>
+
+
+       
+  <!-- footer -->
+  <div class="container-fluid mt-5 mainfoot">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 foot ">
+          <h6 class="hdFooter"> Helpful Links</h6>
+          <ul class="footer-ul">
+            <li> <a href="#" class="footer-links"> Privacy Policy</a> </li>
+            <li> <a href="" class="footer-links"> Terms & Condition</a> </li>
+            <li> <a href="" class="footer-links"> Contact Us</a> </li>
+            <li> <a href="" class="footer-links"> FAQS </a> </li>
+            <li> <a href="" class="footer-links"> Order Tracking</a> </li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 foot  ">
+          <h6 class="hdFooter">Contact Us </h6>
+          <ul class="footer-ul">
+            <li> <a href=""> <i class="fa fa-phone" aria-hidden="true"></i> </a> <span class="contacts"> 03182038679
+              </span>
+            </li>
+            <li> <a href=""> <i class="fa fa-envelope" aria-hidden="true"> </i></a> <span class="contacts">
+                uroosa465@gmail.com </span></li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 foot">
+          <h6 class="hdFooter"> Mission Statement </h6>
+          <p class="footer-para"> Mission Statement - To offer an online, easy to use, cost effective, quality
+            guaranteed, service orientated stationery purchasing method for school goers, personal and small business.
+            Locally based service and community responsibility, coupled with purchasing convenience are the cornerstones
+            of our business model.</p>
+        </div>
+
+      </div>
+      <hr class="line">
+      <i class="fa fa-copyright" aria-hidden="true"> Copyright 2019-2020</i>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAS2ZQ06UevudqpcQ6ABtIBbY3NLVlBz4M",
+      authDomain: "test-phase-a132c.firebaseapp.com",
+      databaseURL: "https://test-phase-a132c.firebaseio.com",
+      projectId: "test-phase-a132c",
+      storageBucket: "test-phase-a132c.appspot.com",
+      messagingSenderId: "294087323166",
+      appId: "1:294087323166:web:3623ce4dd32ed339f4880f",
+      measurementId: "G-QNYK8NLSN6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <!-- <script src="../js/admin.js"></script> -->
+  <script src="../AdminDashBoard/customerOrder.js"></script>
+  <script src="../js/addToCart.js"></script>
+ <!-- <script src="js/getData.js"></script> -->
+</body>
+
+</html>
