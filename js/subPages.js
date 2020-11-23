@@ -14,10 +14,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                     <a class="dropdown-item" href="#" onclick="profileChange()" >Profile</a>
                     </div>
                   </div>`;
-         uroosaModal.id = 'HideModal';
-                   userCheckOut.innerHTML=`<a class="nav-link" href="pages/checkOut.html"><i class="fa fa-shopping-cart fa-3x checkOut  "  aria-hidden="true"></i></a>`
-                  
-                   subPages.innerHTML=`<a class="nav-link" href="adminPanel.html"><i class="fa fa-upload upload " aria-hidden="true"></i></a>`
+                   uroosaModal.id = 'HideModal';
+                   userCheckOut.innerHTML=`<a class="nav-link" href="../pages/checkOut.html"><i class="fa fa-shopping-cart fa-3x checkOut  "  aria-hidden="true"></i></a>`
+                   subPages.innerHTML=`<a class="nav-link" href="../pages/adminPanel.html"><i class="fa fa-upload upload " aria-hidden="true"></i></a>`
     } else {
         registerLogin.innerHTML = "Register/Login";
       

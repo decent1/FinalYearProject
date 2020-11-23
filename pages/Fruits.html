@@ -177,6 +177,96 @@
         </div>
     </div>
   </div>
+  <!--  Uroosa Modal register-->
+
+<div class="modal fade" id="uroosaModal" tabindex="-1" aria-labelledby="uroosaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Login</a>
+              </li>
+          </ul>
+          
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="center">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="FirstName">FirstName</label>
+                          <input type="text" class="form-control" id="signUpFirstName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="LastNAme">Last Name</label>
+                          <input type="text" class="form-control" id="signUpLastName" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="signUpEmail"> Email</label>
+                          <input type="email" class="form-control" id="signUpEmail" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="password"> Password</label>
+                          <input type="password" class="form-control" id="password" required>
+                        </div>
+
+ 
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="signUpAddress" placeholder="1234 Main St" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="Mobile">Mobile</label>
+                          <input type="text" class="form-control" id="signUpMobile" placeholder="Apartment, studio, or floor" required>
+                        </div>
+
+      
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="signUpCity" required>
+                        </div>
+                        <!-- <div class="form-group col-md-6">
+                          <label for="PostalCode">Postal Code</label>
+                          <input type="text" class="form-control" id="SignUpPostalCode">
+                        </div>
+                        <div class="form-group col-md-8">
+                          <label for="personalInformation">Personal Information </label>
+                          <input type="text" class="form-control" id="personalInformation">
+                        </div> -->
+                      </div>
+                      <div class="form-group">
+                        <p id="signUpErrorMessage"></p>
+                        <p id="SignUpSuccessMessage"></p>
+                      </div>
+                      <button onclick="signUp()" type="submit" class="btn btn-primary signUpBtn">Sign Up</button> 
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">  
+                    <label for="EmailAddress">Email address</label>
+                    <input type="email" class="form-control" required id="SignInEmail" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label for="Password">Password</label>
+                    <input type="password" required class="form-control" id="SignInPassword">
+                    <div class="form-group">
+                   <p id="errorMessage"></p>
+                   <p id="successMessage"></p>
+                   </div>
+                   <button onclick="signIn()" type="submit" class="btn btn-primary SignInBtn">Sign In</button>   
+             </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
 <img class="sliderVegi" src="../images/apple.jpg" alt="">
@@ -296,6 +386,7 @@
   <script src="../js/subPages.js"></script>
   <script src="../js/fruit.js"></script>
   <script src="../js/signOut.js"></script>
+
 </body>
 
 </html>
