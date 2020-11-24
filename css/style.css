@@ -449,3 +449,12 @@ text-align: center;
     font-size: 30px !important;
     color: orangered !important;
 }
+
+@media only screen and (max-width: 600px){
+    .mainSlider{
+    height: 100% !important;
+    }
+    .owlZoom{
+        text-align: center;
+    }
+}

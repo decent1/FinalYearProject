@@ -1,11 +1,11 @@
-var display = document.getElementById("display");
+var beefBody = document.getElementById("beefBody");
 
 function getDisplay(){
     firebase.database().ref("Product_Detail/").on("child_added",function(data){
         let currentData = data.val();
-        display.innerHTML += currentData.Category=='beef'?`<div class="col-sm-12 col-md-6 col-lg-3">
+        beefBody.innerHTML += currentData.Category=='beef'?`<div class="col-sm-12 col-md-6 col-lg-3">
         <div class="ProductCard">
-          <img src="images/${currentData.Category}/${currentData.ProductCode}.jpg" alt="">
+          <img src="../images/${currentData.Category}/${currentData.ProductCode}.jpg" alt="">
           <div class="pt-5 pb-5 p-3 text-left">
             <p class="text-muted">Rs. ${currentData.Price}</p>
             <p class="medium">${currentData.productName}</p>

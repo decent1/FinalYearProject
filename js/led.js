@@ -1,5 +1,5 @@
 
-var display = document.getElementById("display");
+var LED = document.getElementById("LED");
 
 function getDisplay(){
     firebase.database().ref("Product_Detail/").on("child_added",function(data){
